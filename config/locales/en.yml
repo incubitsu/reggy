@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  profile_updated: "Successfully updated your profile"
+  logged_out: "Successfully logged out"
+  logged_in: "Successfully logged in"

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates_length_of :username, minimum: 5, on: :update, if: :will_save_change_to_username?
   validates :email, presence: true, uniqueness: true
-  validates_length_of :password, minimum: 8
+  validates_length_of :password, minimum: 8, if: :will_save_change_to_password_digest?
 
   before_validation :normalize_email, on: :create
   before_create :set_default_username

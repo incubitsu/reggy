@@ -5,7 +5,7 @@ class UserController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to user_url, notice: 'saved'
+      redirect_to user_url, notice: t(:profile_updated)
     else
       render 'edit'
     end
@@ -14,6 +14,7 @@ class UserController < ApplicationController
   private
 
   def user_params
+    params[:user].delete(:password) if params[:user][:password].blank?
     params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
