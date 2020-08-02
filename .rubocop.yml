@@ -1,0 +1,8 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'bin/*'
+
+Style/Documentation:
+  Enabled: false
