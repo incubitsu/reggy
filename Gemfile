@@ -22,6 +22,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pg'
 
+gem 'bootstrap', '~> 4.5.0'
+
+gem 'simple_form'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
