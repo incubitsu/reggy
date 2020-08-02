@@ -4,7 +4,13 @@
     </button> <%= link_to "Reggy", root_path, class: 'navbar-brand' %>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav mr-auto">
-      	<li class='nav-item'><%= link_to "Sign up", new_registration_url, class: 'nav-link' %></li>
+        <% if current_user %>
+          <li class='nav-item'><%= link_to "Profile", user_url, class: 'nav-link' %></li>
+          <li class='nav-item'><%= link_to "Sign out", logout_sessions_url, class: 'nav-link' %></li>
+        <% else %>
+          <li class='nav-item'><%= link_to "Login", new_session_url, class: 'nav-link' %></li>
+          <li class='nav-item'><%= link_to "Sign up", new_registration_url, class: 'nav-link' %></li>
+        <% end %>
       </ul>
     </div>
   </div>
