@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Profile</h1>
+  </div>
+  <%= simple_form_for current_user, url: user_path do |f| %>
+    <%= f.input :username %>
+    <%= f.input :email, disabled: true %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.button :submit, "Save Profile", class: "btn-primary" %>
+  <% end %>
+</div>
