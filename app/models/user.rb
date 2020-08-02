@@ -3,6 +3,7 @@
 class User < ApplicationRecord
   has_secure_password
 
+  validates_format_of :email, with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates_length_of :username, minimum: 5, on: :update, if: :will_save_change_to_username?
   validates :email, presence: true, uniqueness: true
   validates_length_of :password, minimum: 8
