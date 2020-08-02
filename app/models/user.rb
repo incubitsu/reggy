@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   before_validation :normalize_email, on: :create
   before_create :set_default_username
+  after_create :send_welcome_email
 
   protected
 
@@ -19,5 +20,9 @@ class User < ApplicationRecord
 
   def set_default_username
     self.username = email.split('@').first
+  end
+
+  def send_welcome_email
+    UserMailer.welcome_mail(self).deliver
   end
 end

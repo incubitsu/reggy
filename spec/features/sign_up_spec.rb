@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'User can sign up' do
+RSpec.feature 'Sign up features' do
   scenario 'can sign up' do
     visit('/')
     click_link('Sign up')
@@ -15,6 +15,9 @@ RSpec.feature 'User can sign up' do
 
     expect(current_path).to eql('/user')
     expect(page).to have_content('Profile')
-    # TODO: Recieve email
+
+    open_email('person@example.com')
+
+    expect(current_email).to have_content 'Welcome to Reggy'
   end
 end
