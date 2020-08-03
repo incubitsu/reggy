@@ -5,6 +5,6 @@ require 'rails_helper'
 RSpec.feature 'Home features' do
   scenario 'opens home page' do
     visit('/')
-    expect(page).to have_content('Welcome to Reggy')
+    expect(page).to have_content(I18n.t(:greetings))
   end
 end

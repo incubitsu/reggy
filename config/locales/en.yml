@@ -30,6 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  greetings: "Welcome to Reggy"
+  subtext: "Ready to get your mind blown? 🤯"
+  profile: "Profile"
+  sign_out: "Sign out"
+  login: "Login"
+  sign_up: "Sign up"
+  forgot_password: "Forgot password"
+  reset_password: "Reset password"
+  save_profile: "Save Profile"
   user:
     profile_updated: "Successfully updated your profile"
   sessions:

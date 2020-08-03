@@ -5,11 +5,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav mr-auto">
         <% if current_user %>
-          <li class='nav-item'><%= link_to "Profile", user_url, class: 'nav-link' %></li>
-          <li class='nav-item'><%= link_to "Sign out", logout_sessions_url, class: 'nav-link' %></li>
+          <li class='nav-item'><%= link_to t(:profile), user_url, class: 'nav-link' %></li>
+          <li class='nav-item'><%= link_to t(:sign_out), logout_sessions_url, class: 'nav-link' %></li>
         <% else %>
-          <li class='nav-item'><%= link_to "Login", new_session_url, class: 'nav-link' %></li>
-          <li class='nav-item'><%= link_to "Sign up", new_registration_url, class: 'nav-link' %></li>
+          <li class='nav-item'><%= link_to t(:login), new_session_url, class: 'nav-link' %></li>
+          <li class='nav-item'><%= link_to t(:sign_up), new_registration_url, class: 'nav-link' %></li>
+        <% end %>
+        <% if current_page?(locale: :ja) %>
+          <li class='nav-item'><%= link_to "Switch to English", { locale: :en }, class: 'nav-link' %></li>
+        <% else %>
+          <li class='nav-item'><%= link_to "日本語に切り替え", { locale: :ja }, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div>

@@ -6,30 +6,32 @@ RSpec.feature 'Forgot password features' do
   background 'as a registered user' do
     User.create!(email: 'person@example.com', password: 'password', password_confirmation: 'password')
   end
+  I18n.available_locales.each do |_locale|
+    scenario 'can request password reset' do
+      visit('/')
+      click_link(I18n.t(:login))
 
-  scenario 'can request password reset' do
-    visit('/')
-    click_link('Login')
+      click_link(I18n.t(:forgot_password))
 
-    click_link('Forgot password?')
+      fill_in(I18n.t('simple_form.labels.defaults.email'), with: 'person@example.com')
 
-    fill_in('Email', with: 'person@example.com')
-    click_button 'Forgot Password'
+      click_button I18n.t(:forgot_password)
 
-    expect(page).to have_content 'Email sent with password reset instructions'
+      expect(page).to have_content I18n.t('forgot_passwords.email_sent')
 
-    open_email('person@example.com')
+      open_email('person@example.com')
 
-    expect(current_email).to have_content 'Forgot your password?'
+      expect(current_email).to have_content 'Forgot your password?'
 
-    current_email.click_link 'Reset Password'
+      current_email.click_link 'Reset Password'
 
-    fill_in('Password', with: 'password2')
-    fill_in('Password confirmation', with: 'password2')
+      fill_in(I18n.t('simple_form.labels.defaults.password'), with: 'password2')
+      fill_in(I18n.t('simple_form.labels.defaults.password_confirmation'), with: 'password2')
 
-    click_button 'Reset Password'
+      click_button I18n.t(:reset_password)
 
-    expect(current_path).to eql('/sessions/new')
-    expect(page).to have_content 'Password has been reset'
+      expect(current_path).to eql(new_session_path(locale: :en)) # Note: Emails are not localized
+      expect(page).to have_content I18n.t('forgot_passwords.success')
+    end
   end
 end

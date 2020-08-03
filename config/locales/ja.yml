@@ -1,0 +1,36 @@
+ja:
+  greetings: "Reggy へようこそ"
+  subtext: "あなたの心を吹き飛ばす準備ができていますか？ 🤯"
+  profile: "プロフィール"
+  sign_out: "サインアウト"
+  login: "ログインする"
+  sign_up: "サインアップ"
+  save_profile: "プロファイルを保存"
+  forgot_password: "パスワードをお忘れですか"
+  reset_password: "パスワードを再設定する"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid:
+                "メールが無効です"
+            password:
+              too_short:
+                "パスワードが短すぎます（8文字以上）"
+            password_confirmation:
+              confirmation:
+                "パスワードの確認がパスワードと一致しません"
+            username:
+              too_short:
+                "ユーザー名が短すぎます（5文字以上）"
+  user:
+    profile_updated: "プロフィール更新が完了しました"
+  sessions:
+    logged_out: "ログアウトに成功しました"
+    logged_in: "ログインに成功しました"
+  forgot_passwords:
+    email_sent: "パスワードのリセット手順を記載したメールを送信しました"
+    expired: "パスワードのリセットの期限が切れました"
+    success: "パスワードがリセットされました"
