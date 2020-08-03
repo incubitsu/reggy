@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: sign_in_params[:email]).try(:authenticate, sign_in_params[:password])
     if @user
       sign_in(@user)
-      redirect_to user_url, notice: t(:logged_in)
+      redirect_to user_url, notice: t('sessions.logged_in')
     else
       render 'new'
     end
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def logout
     sign_out
-    redirect_to root_url, notice: t(:logged_out)
+    redirect_to root_url, notice: t('sessions.logged_out')
   end
 
   private

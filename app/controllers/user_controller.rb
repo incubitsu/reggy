@@ -5,7 +5,7 @@ class UserController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to user_url, notice: t(:profile_updated)
+      redirect_to user_url, notice: t('user.profile_updated')
     else
       render 'edit'
     end

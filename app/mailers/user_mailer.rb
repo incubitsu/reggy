@@ -10,4 +10,12 @@ class UserMailer < ActionMailer::Base
       subject: 'Welcome to Reggy!'
     )
   end
+
+  def forgot_password(user)
+    @user = user
+    mail(
+      to: user.email,
+      subject: 'Forgot Password Instructions'
+    )
+  end
 end

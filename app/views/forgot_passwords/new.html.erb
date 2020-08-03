@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Forgot Password</h1>
+  </div>
+  <%= simple_form_for :user, url: forgot_passwords_path, method: :post do |f| %>
+    <%= f.input :email %>
+    <%= f.button :submit, "Forgot Password", class: "btn-primary" %>
+  <% end %>
+</div>

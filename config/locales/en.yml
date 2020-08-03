@@ -30,7 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  profile_updated: "Successfully updated your profile"
-  logged_out: "Successfully logged out"
-  logged_in: "Successfully logged in"
+  user:
+    profile_updated: "Successfully updated your profile"
+  sessions:
+    logged_out: "Successfully logged out"
+    logged_in: "Successfully logged in"
+  forgot_passwords:
+    email_sent: "Email sent with password reset instructions"
+    expired: "Password reset has expired"
+    success: "Password has been reset"

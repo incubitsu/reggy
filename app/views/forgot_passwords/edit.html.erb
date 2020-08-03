@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for @user, url: forgot_password_path(params[:id]) do |f| %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.button :submit, "Reset Password", class: "btn-primary" %>
+  <% end %>
+</div>

@@ -12,6 +12,13 @@ class User < ApplicationRecord
   before_create :set_default_username
   after_create :send_welcome_email
 
+  def send_password_reset_email
+    self.forgot_password_token = SecureRandom.hex(10)
+    self.forgot_password_sent_at = Time.zone.now
+    save(validate: false)
+    UserMailer.forgot_password(self).deliver
+  end
+
   protected
 
   def normalize_email
