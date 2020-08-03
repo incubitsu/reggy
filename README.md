@@ -1,24 +1,19 @@
-# README
+# Reggy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Konichiwa!
 
-Things you may want to cover:
+Meet Reggy, an app that registers users.
 
-* Ruby version
+Requirements:
+- Ruby 2.7.1
+- Rails 6.0.3
 
-* System dependencies
 
-* Configuration
+App runs like a standard rails installation.
 
-* Database creation
+```
+bundle install
+bundle exec rails s
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Note: There is an experimental Japanese localization. 
